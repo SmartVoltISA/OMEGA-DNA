@@ -1,6 +1,6 @@
 # E6 — Real Biological Gate: Sequence → Relations → Cellular State
 
-**Status:** preregistered protocol; execution requires local biological payloads.
+**Status:** preregistered protocol; chunked execution path prepared; biological metrics remain OPEN until real payloads are actually processed.
 
 ## Objective
 Test whether the relational architecture adds predictive information on independently measured human regulatory data beyond a capacity-matched sequence-only baseline.
@@ -17,7 +17,26 @@ A sample is an enhancer/promoter-gene candidate. The label is derived from RNA e
 4. Enhancer-promoter contacts from HiChIP, promoter-capture Hi-C, ChIA-PET or equivalent.
 5. RNA-seq expression for target genes.
 
-A suitable public example is the GSE188405 family: matched ATAC-seq, RNA-seq and H3K27ac HiChIP across human cell types. The GM12878 subset has dedicated ATAC and HiChIP records. Another suitable resource is GSE113481/GSE113482/GSE113480, which jointly provide promoter-capture Hi-C, RNA-seq and ATAC-seq in human neural cell types.
+A suitable public example is the GSE188405 family: matched human ATAC-seq, RNA-seq and H3K27ac HiChIP across human cell types. The GM12878 subset has dedicated ATAC and HiChIP records. Another suitable resource is the GSE113481/GSE113482/GSE113480 family, combining promoter-capture Hi-C, RNA-seq and ATAC-seq in human neural cell types.
+
+## Chunked reference strategy
+A multi-gigabyte reference FASTA is **not** loaded into RAM as one object.
+
+`E6_CHUNKED_REFERENCE_EXTRACTOR.py` implements the intended pipeline:
+
+`large reference → indexed byte ranges → ≤100 MiB chunks → interval extraction → compact candidate table → E6 runner`
+
+The extractor:
+- reads the `.fai` index;
+- determines only the genomic intervals actually required by the candidate table;
+- merges nearby byte ranges;
+- downloads each merged range with HTTP Range requests;
+- caps each range at `--chunk-mb` (default 100 MiB);
+- caches completed chunks so interrupted runs can resume;
+- refuses servers that silently ignore Range requests;
+- discards chunk payloads after extracting the requested sequences.
+
+Thus the full 3.16 GB DNALongBench hg19 reference can be treated as a stream of bounded pieces rather than a single memory allocation. The benchmark's published ETGP reference is approximately 3.16 GB. The same strategy applies to other large FASTA inputs.
 
 ## Models
 ### A — sequence-only baseline
@@ -79,7 +98,7 @@ A single significant p-value is not sufficient.
 Only after the predictive gate passes, use independent perturbation data (CRISPRi/CRISPRa or regulator perturbation) to test whether measured relation changes predict expression changes. Predictive association and computational ablation are not biological causality.
 
 ## Current execution state
-The repository has the complete controlled synthetic chain through memory/persistence. The real biological gate is **OPEN**, not failed: the required public datasets are identified, but the current execution environment cannot ingest the GEO binary payloads directly. No biological metric is fabricated.
+The controlled synthetic chain through memory/persistence is complete. The real biological gate is **OPEN**. The chunked execution path is now implemented, but no biological metric is claimed until the external genomic payload is successfully retrieved and processed. No result is fabricated merely because the file is large.
 
 ## Reproducibility
 Record:
@@ -89,6 +108,7 @@ Record:
 - coordinate liftover, if any;
 - feature schema;
 - split chromosomes;
+- chunk size and Range manifest;
 - random seeds;
 - model hyperparameters;
 - null permutations;
