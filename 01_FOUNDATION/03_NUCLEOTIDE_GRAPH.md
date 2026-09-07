@@ -4,7 +4,7 @@
 
 This document defines a structural graph for one DNA nucleotide. It is deliberately limited to established molecular architecture; no new biological law is claimed.
 
-A DNA nucleotide contains a nitrogenous base, 2'-deoxyribose and phosphate group. The base is covalently attached to the sugar; the phosphate participates in the backbone linkage. cite source: NCBI Bookshelf, DNA Structure 
+A DNA nucleotide contains a nitrogenous base, 2'-deoxyribose and phosphate group. The base is covalently attached to the sugar; the phosphate participates in the backbone linkage. Source: NCBI Bookshelf, *DNA Structure*.
 
 ## Graph levels
 
@@ -33,11 +33,11 @@ The nucleotide is therefore not a primitive node. It is a higher-order structure
 
 ### G3 — polymer layer
 
-Adjacent nucleotide residues are connected through phosphodiester bonds between the 3' hydroxyl and 5' phosphate positions. This creates the directional sugar-phosphate backbone and 5'→3' polarity. cite source: NCBI Bookshelf, DNA Structure 
+Adjacent nucleotide residues are connected through phosphodiester bonds between the 3' hydroxyl and 5' phosphate positions. This creates the directional sugar-phosphate backbone and 5'→3' polarity. Source: NCBI Bookshelf, *DNA Structure*.
 
 ### G4 — paired layer
 
-The base participates in a relation with a complementary base on the opposite strand. Canonical Watson-Crick pairing is A-T and G-C; A-T has two and G-C three hydrogen bonds in the conventional structural description. cite source: NCBI Bookshelf, DNA Structure 
+The base participates in a relation with a complementary base on the opposite strand. Canonical Watson-Crick pairing is A-T and G-C; A-T has two and G-C three hydrogen bonds in the conventional structural description. Source: NCBI Bookshelf, *DNA Structure*.
 
 ## Architectural interpretation
 
