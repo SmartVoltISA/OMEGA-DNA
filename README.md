@@ -27,3 +27,22 @@ Research repository. Hypotheses are not treated as established facts. Every clai
 ## Core rule
 
 Do not force DNA into the theory. Build the representation from observed structure first, then test whether the architecture adds explanatory or predictive power.
+
+## Full experimental pass
+
+The current architectural test suite covers complementarity, maintenance feedback, typed relations, history-dependent memory, contextual relations, ablation/null controls, and relational invariance. The executed toy tests support the **capacity** of the architecture to carry information that sequence-only or untyped baselines can lose. They do **not** establish a new biological mechanism.
+
+See:
+
+- `03_EXPERIMENTS/FULL_DNA_PASS.md` — complete layer-by-layer pass.
+- `03_EXPERIMENTS/OFFICIAL_COMPARISON.md` — comparison with established biology.
+- `03_EXPERIMENTS/RELATIONAL_COMPLEMENTARITY_SUITE.py` — reproducible test code.
+- `03_EXPERIMENTS/RELATIONAL_COMPLEMENTARITY_RESULTS.md` — results, nulls, limitations, and final scientific verdict.
+
+### Current verdict
+
+**Architecture-level complementarity: supported in controlled toy systems.**  
+**Real biological predictive advantage: not yet established.**  
+**New biological principle: no evidence yet.**
+
+The decisive next gate is a real public functional-genomics benchmark comparing sequence-only against sequence + explicitly typed measured relations/state under matched splits, capacity controls, and relation-shuffle nulls.
