@@ -30,19 +30,24 @@ Do not force DNA into the theory. Build the representation from observed structu
 
 ## Full experimental pass
 
-The current architectural test suite covers complementarity, maintenance feedback, typed relations, history-dependent memory, contextual relations, ablation/null controls, and relational invariance. The executed toy tests support the **capacity** of the architecture to carry information that sequence-only or untyped baselines can lose. They do **not** establish a new biological mechanism.
+The controlled suite now covers complementarity, maintenance feedback, typed relations, local physical structure, nucleosome-like structure, accessibility state, typed regulatory relations, enhancer–promoter relations, regulatory network topology, cellular state, memory/persistence, causal perturbation controls, and relational invariance.
+
+The executed computational gates repeatedly show that explicitly represented relations/history can add predictive information when the synthetic data-generating process contains that information. These are architecture tests, not biological proof.
 
 See:
 
 - `03_EXPERIMENTS/FULL_DNA_PASS.md` — complete layer-by-layer pass.
-- `03_EXPERIMENTS/OFFICIAL_COMPARISON.md` — comparison with established biology.
-- `03_EXPERIMENTS/RELATIONAL_COMPLEMENTARITY_SUITE.py` — reproducible test code.
-- `03_EXPERIMENTS/RELATIONAL_COMPLEMENTARITY_RESULTS.md` — results, nulls, limitations, and final scientific verdict.
+- `03_EXPERIMENTS/FULL_EXECUTION_AUDIT_2026-09-07.md` — execution audit and open gates.
+- `03_EXPERIMENTS/E5_MEMORY_CAUSAL_PERSISTENCE_RESULTS.md` — latest memory/persistence gate.
+- `03_EXPERIMENTS/E6_REAL_BIOLOGICAL_GATE_PROTOCOL.md` — preregistered biological benchmark.
+- `03_EXPERIMENTS/E6_REAL_BIOLOGICAL_GATE_RUNNER.py` — reproducible runner for the real-data gate.
 
-### Current verdict
+## Current verdict
 
-**Architecture-level complementarity: supported in controlled toy systems.**  
-**Real biological predictive advantage: not yet established.**  
+**Architecture-level relational capacity: supported in controlled computational systems.**  
+**Real biological predictive advantage: still open.**  
 **New biological principle: no evidence yet.**
 
-The decisive next gate is a real public functional-genomics benchmark comparing sequence-only against sequence + explicitly typed measured relations/state under matched splits, capacity controls, and relation-shuffle nulls.
+The decisive next gate is now a real public functional-genomics benchmark comparing a capacity-matched sequence-only model against sequence + independently measured typed relations/state under chromosome-level holdouts, relation-shuffle nulls, and leakage controls.
+
+Public datasets identified for this gate include GSE188405 (matched ATAC-seq, RNA-seq and H3K27ac HiChIP across human cell types) and the GSE113480/GSE113481/GSE113482 family (ATAC-seq, promoter-capture Hi-C and RNA-seq in human neural cell types).
