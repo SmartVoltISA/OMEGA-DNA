@@ -9,7 +9,7 @@ This audit separates three classes of result:
 
 1. **Executed and reproduced locally** — the synthetic/architectural suite.
 2. **Executed with independent holdout audit** — checks that the earlier synthetic demonstrations are not artifacts of training and scoring on the same rows.
-3. **Not executed yet** — the real biological sequence benchmark, because the DNALongBench hg19 FASTA is ~3.16 GB and is not available in the current execution environment.
+3. **Not executed yet** — the real biological benchmark, because the required public genomic payloads are not directly ingestible in the current execution environment.
 
 No biological result is fabricated to close this gap.
 
@@ -90,9 +90,15 @@ It does **not** establish a new law of biology.
 
 ## 5. Real biological benchmark gate
 
-The decisive real-data benchmark is DNALongBench Enhancer–Target Gene Prediction (ETGP): 450,000 bp input, 2,602 samples, AUROC. The benchmark is explicitly designed around long-range enhancer–promoter prediction from DNA sequence. The official benchmark reports Expert Model 0.926, CNN 0.797, HyenaDNA 0.828, Caduceus-Ph 0.826 and Caduceus-PS 0.821 on ETGP.
+The real gate is now specified as E6 in `E6_REAL_BIOLOGICAL_GATE_PROTOCOL.md`.
 
-The public dataset provides the sequence FASTA plus target/split metadata. The sequence FASTA is approximately 3.16 GB. The current execution environment cannot retrieve that multi-gigabyte file, so a real sequence-only vs relation-aware biological result is intentionally **NOT CLAIMED**.
+The first practical public target is the **GSE188405** SuperSeries, which contains matched human ATAC-seq, RNA-seq and H3K27ac HiChIP measurements. Its GM12878 subset provides an especially compact starting point: ATAC-seq sample GSM5680698, H3K27ac HiChIP sample GSM5680734 and corresponding RNA-seq records. The HiChIP processed loop file for GSM5680734 is reported at about 1.5 MB.
+
+A replication target is the **GSE113480/GSE113481/GSE113482** family, combining ATAC-seq, promoter-capture Hi-C and RNA-seq in human neural cell types.
+
+The real-data runner is now committed as `03_EXPERIMENTS/E6_REAL_BIOLOGICAL_GATE_RUNNER.py`. It requires a leakage-controlled candidate table plus a matching reference FASTA and produces sequence-only, relational, and relation-shuffle-null endpoints.
+
+**Current biological execution status: OPEN.** Dataset identification and protocol construction are complete; the actual biological payloads were not ingestible in this environment. Therefore no biological AUROC/AUPRC number is claimed.
 
 ## 6. Critical methodological rule
 
@@ -123,14 +129,16 @@ Derived scores such as ABC_score must be treated as derived/exploratory features
 - invariance test;
 - independent holdout audit;
 - sequence-only vs relation-aware experimental protocol;
-- parallel A/B branch architecture.
+- parallel A/B branch architecture;
+- identification of public real-data candidates;
+- preregistered real-data runner.
 
 ### Still open
 
-- real biological sequence-only vs independently measured relation/state benchmark;
+- actual real biological sequence-only vs independently measured relation/state benchmark;
 - capacity-matched comparison against a strong long-context DNA model;
 - causal perturbation tests;
-- 3D genome relation layer;
+- 3D genome relation layer on measured data;
 - genome-scale functional map.
 
 ## 8. Scientific conclusion
@@ -141,4 +149,4 @@ The correct next statement is therefore:
 
 > OMEGA-DNA has demonstrated that explicit typed relations, state and history can add predictive information in controlled systems and has passed independent holdout checks. Whether the same representation adds information to real genomic prediction beyond DNA sequence remains an open, explicitly defined biological experiment.
 
-The project must not claim that every DNA base has now been decoded. The next stage is to build a genome-scale relational functional map where each annotation is tied to an observable role and a confidence/evidence class.
+The project must not claim that every DNA base has now been decoded. The next stage is to execute E6 on the identified public functional-genomics payloads and, if it passes, extend the same test to causal perturbations and a genome-scale relational functional map.
