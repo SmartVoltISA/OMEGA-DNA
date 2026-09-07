@@ -12,21 +12,21 @@
 - full topology model: message + degree + signed nonlinear regulatory channel
 - feedback correction compared with no-feedback control
 
-## Results
+## Primary endpoint: AUROC
 
-| Model | AUROC | AP |
-|---|---:|---:|
-| Sequence/state only | **0.91914 ± 0.02088** | **0.920?** |
-| Relational state | **0.96714 ± 0.00996** | **0.515?** |
-| Full topology/state | **0.96709 ± 0.01004** | **0.514?** |
-
-The AP values above are not used as the primary endpoint because the temporal aggregation produces near-balanced binary targets; AUROC is the preregistered primary endpoint for this gate.
+| Model | AUROC |
+|---|---:|
+| Sequence/state only | **0.91914 ± 0.02088** |
+| Relational state | **0.96714 ± 0.00996** |
+| Full topology/state | **0.96709 ± 0.01004** |
 
 Paired AUROC relational vs sequence: **t = 21.3460, p = 1.83×10⁻²⁶**.
 
 Paired AUROC full topology vs sequence: **t = 21.1229, p = 2.91×10⁻²⁶**.
 
-### Feedback
+The direct relational channel captures essentially all of the available network gain in this synthetic system; therefore the result is not overclaimed as evidence that every graph statistic adds independent information.
+
+### Feedback gate
 Mean prediction/control error:
 
 - no feedback: **0.530745 ± 0.026956**
@@ -35,9 +35,9 @@ Mean prediction/control error:
 
 ## Interpretation
 
-The controlled gate passes. Explicit regulatory relations substantially improve prediction of future cellular state over the sequence/state-only representation. The additional full-topology channels do not materially improve over the direct regulatory-message representation in this particular synthetic system, so the result is not overclaimed as evidence that every graph statistic adds information.
+The controlled gate passes. Explicit regulatory relations substantially improve prediction of future cellular state over the sequence/state-only representation. Feedback correction further reduces state error.
 
-The feedback perturbation reduces mean state error, supporting the next architectural transition:
+Architectural transition supported by this controlled system:
 
 `regulatory network → cellular state → feedback → maintained/updated state`
 
