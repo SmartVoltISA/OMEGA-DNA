@@ -25,7 +25,12 @@ Paired relation vs sequence: **t = 41.46, p = 8.12×10⁻⁴⁰**.
 
 Paired memory vs sequence: **t = 111.69, p = 1.18×10⁻⁶⁰**.
 
-A separate causal ablation control gave mean effect **0.01701 ± 0.007?** for the strongest regulator and **0.00693 ± ~0.00** for a random regulator; paired **t = 4.70, p = 2.17×10⁻⁵**. The causal comparison is treated as a controlled perturbation result, not proof of biological causality.
+Separate causal ablation control:
+- strongest-regulator effect: **0.01701 ± 0.01324**
+- random-regulator effect: **0.00693 ± 0.00735**
+- paired **t = 4.70, p = 2.17×10⁻⁵**
+
+The causal comparison is treated as a controlled perturbation result, not proof of biological causality.
 
 ## Interpretation
 
