@@ -45,10 +45,13 @@ def make_graph(n, family, seed, deletion, addition):
         if rng.random() < deletion:
             g.remove_edge(*e)
     nonedges = list(nx.non_edges(g))
-    n_add = min(len(nonedges), int(round(addition * len(original))))
-    if n_add:
-        chosen = rng.choice(len(nonedges), n_add, replace=False)
-        g.add_edges_from(nonedges[int(i)] for i in chosen)
+    # Bernoulli additions preserve the intended expected noise rate across sizes.
+    # Rounding to an integer would give zero additions for small training graphs
+    # but one or more additions for larger test graphs, causing size-dependent shift.
+    add_probability = min(1.0, addition * len(original) / max(len(nonedges), 1))
+    if nonedges and add_probability > 0:
+        chosen = [e for e in nonedges if rng.random() < add_probability]
+        g.add_edges_from(chosen)
     perm = rng.permutation(n)
     return nx.relabel_nodes(g, {i: int(perm[i]) for i in range(n)})
 
