@@ -41,4 +41,4 @@ It does **not** show that the network discovers the pattern, self-organizes it, 
 5. Freeze hypotheses and analysis before the next run; preserve raw trial-level data and code hash.
 
 ## Reproduction
-The E7 and E8 runners are committed in this repository. The E9 sweep was executed in a local analysis session using the protocol above; the dedicated E9 runner and raw CSV have not yet been committed.
+The E7 and E8 runners are committed in this repository. The E9 sweep was executed in an analysis session using the protocol above. The runner is committed at [E9_DEGREE_MATCHED_RUNNER.py](E9_DEGREE_MATCHED_RUNNER.py); the raw CSV has not yet been committed. The runner includes an assertion that the degree sequence is unchanged by rewiring.
