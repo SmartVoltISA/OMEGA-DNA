@@ -48,3 +48,11 @@ The exploratory model suggests that preserving a moderate local history trace ac
 
 - Consolidated protocol, run counts, condition summaries, paired comparisons, caveats: [E7_E12_FULL_RUN_AUDIT.md](E7_E12_FULL_RUN_AUDIT.md)
 - Full combined raw trial data and summary CSV were exported as downloadable artifacts in the conversation. They are not committed in this repository.
+
+
+## E13 — Emergence test without target labels
+
+- Runner: [E13_EMERGENCE_RUNNER.py](E13_EMERGENCE_RUNNER.py)
+- Results and limitations: [E13_EMERGENCE_RESULTS.md](E13_EMERGENCE_RESULTS.md)
+
+This exploratory test began with random states and random topology. Local majority dynamics usually collapsed to global consensus in 3–4 steps; the tested state-based rewiring did not sustain a differentiated organization. This is a negative result for this specific rule, not a disproof of self-organization generally.
