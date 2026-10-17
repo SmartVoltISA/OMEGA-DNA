@@ -53,7 +53,7 @@ See:
 ## Current verdict
 
 **Architecture-level relational capacity: supported in controlled computational systems.**  
-**Abstract-form transfer: provisionally supported in exploratory E14 and a corrected E15 synthetic test; independent reproduction pending.**  
+**Hand-designed abstract-form transfer: provisionally supported in E14/E15 synthetic tests.**  \n**Learned abstract-form transfer: not demonstrated by E16; the tested message-passing model failed on global-form distinctions.**  
 **Real biological predictive advantage: still open.**  
 **New biological principle: no evidence yet.**
 
