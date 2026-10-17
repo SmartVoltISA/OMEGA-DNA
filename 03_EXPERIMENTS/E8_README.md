@@ -34,3 +34,11 @@ In this exploratory test, state-based degree-preserving rewiring did not robustl
 - Results: [E11_MEMORY_HYSTERESIS_RESULTS.md](E11_MEMORY_HYSTERESIS_RESULTS.md)
 
 The exploratory sweep found that stronger local memory can delay collapse toward consensus, but the benefit shrinks as noise rises. At 3% noise, even the strongest tested memory returned to about 50% target retention in the final 50 steps. This is limited evidence for history-dependent persistence in this toy model, not spontaneous memory or a universal law.
+
+
+## E12 — Component turnover and memory continuity
+
+- Runner: [E12_TURNOVER_MEMORY_RUNNER.py](E12_TURNOVER_MEMORY_RUNNER.py)
+- Results: [E12_TURNOVER_MEMORY_RESULTS.md](E12_TURNOVER_MEMORY_RESULTS.md)
+
+The exploratory model suggests that preserving a moderate local history trace across replacement can improve retention of an already encoded target pattern under noise and turnover. Stronger memory can become harmful when it goes stale. The graph and initial state encode the pattern, so this is a persistence result, not emergence or a biological law.
