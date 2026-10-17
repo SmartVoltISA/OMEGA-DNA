@@ -38,17 +38,22 @@ See:
 
 - `03_EXPERIMENTS/FULL_DNA_PASS.md` — complete layer-by-layer pass.
 - `03_EXPERIMENTS/FULL_EXECUTION_AUDIT_2026-09-07.md` — execution audit and open gates.
-- `03_EXPERIMENTS/E5_MEMORY_CAUSAL_PERSISTENCE_RESULTS.md` — latest memory/persistence gate.
-- `03_EXPERIMENTS/E6_REAL_BIOLOGICAL_GATE_PROTOCOL.md` — preregistered biological benchmark.
+- `03_EXPERIMENTS/E5_MEMORY_CAUSAL_PERSISTENCE_RESULTS.md` — memory/persistence gate.
+- `03_EXPERIMENTS/E6_REAL_BIOLOGICAL_GATE_PROTOCOL.md` — biological benchmark protocol.
 - `03_EXPERIMENTS/E6_REAL_BIOLOGICAL_GATE_RUNNER.py` — reproducible runner for the real-data gate.
+- `03_EXPERIMENTS/E14_ABSTRACTION_MEMORY_PROTOCOL.md` — abstract-form memory pilot protocol.
+- `03_EXPERIMENTS/E14_ABSTRACTION_MEMORY_RUNNER.py` — reproducible E14 runner.
+- `03_EXPERIMENTS/E14_ABSTRACTION_MEMORY_RESULTS.md` — E14 results and limitations.
 - `03_EXPERIMENTS/RESEARCH_STABILITY_IDENTITY_MIRROR_LIFE.md` — separate research proposal on system stability, identity under component turnover, and the scientific context of mirror life.
+- `HYPOTHESES.md` — includes H-DNA-05, memory of abstract form.
 
 ## Current verdict
 
 **Architecture-level relational capacity: supported in controlled computational systems.**  
+**Abstract-form transfer: provisionally supported in a synthetic graph-classification pilot; confirmatory test pending.**  
 **Real biological predictive advantage: still open.**  
 **New biological principle: no evidence yet.**
 
-The decisive next gate is now a real public functional-genomics benchmark comparing a capacity-matched sequence-only model against sequence + independently measured typed relations/state under chromosome-level holdouts, relation-shuffle nulls, and leakage controls.
+The decisive biological gate remains a real public functional-genomics benchmark comparing a capacity-matched sequence-only model against sequence + independently measured typed relations/state under chromosome-level holdouts, relation-shuffle nulls, and leakage controls.
 
 Public datasets identified for this gate include GSE188405 (matched ATAC-seq, RNA-seq and H3K27ac HiChIP across human cell types) and the GSE113480/GSE113481/GSE113482 family (ATAC-seq, promoter-capture Hi-C and RNA-seq in human neural cell types).
