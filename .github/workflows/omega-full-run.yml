@@ -1,0 +1,50 @@
+name: OMEGA full experiment suite
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "03_EXPERIMENTS/E7_STABILITY_IDENTITY_RUNNER.py"
+      - "03_EXPERIMENTS/E8_STRUCTURAL_MEMORY_RUNNER.py"
+      - "03_EXPERIMENTS/E9_DEGREE_MATCHED_RUNNER.py"
+      - "03_EXPERIMENTS/E10_LOCAL_ADAPTATION_RUNNER.py"
+      - "03_EXPERIMENTS/E11_MEMORY_HYSTERESIS_RUNNER.py"
+      - "03_EXPERIMENTS/E12_TURNOVER_MEMORY_RUNNER.py"
+      - ".github/workflows/omega-full-run.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  run-full-suite:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        run: python -m pip install --upgrade pip numpy
+      - name: Run E7
+        run: python 03_EXPERIMENTS/E7_STABILITY_IDENTITY_RUNNER.py --out results/E7.csv
+      - name: Run E8
+        run: python 03_EXPERIMENTS/E8_STRUCTURAL_MEMORY_RUNNER.py --out results/E8.csv
+      - name: Run E9
+        run: python 03_EXPERIMENTS/E9_DEGREE_MATCHED_RUNNER.py --out results/E9.csv
+      - name: Run E10
+        run: python 03_EXPERIMENTS/E10_LOCAL_ADAPTATION_RUNNER.py --out results/E10.csv
+      - name: Run E11
+        run: python 03_EXPERIMENTS/E11_MEMORY_HYSTERESIS_RUNNER.py --out results/E11.csv
+      - name: Run E12
+        run: python 03_EXPERIMENTS/E12_TURNOVER_MEMORY_RUNNER.py --out results/E12.csv
+      - name: Upload raw trial data
+        uses: actions/upload-artifact@v4
+        with:
+          name: omega-full-experiment-results
+          path: results/*.csv
+          if-no-files-found: error
+          retention-days: 90
