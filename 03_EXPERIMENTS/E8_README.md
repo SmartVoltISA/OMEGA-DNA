@@ -42,3 +42,9 @@ The exploratory sweep found that stronger local memory can delay collapse toward
 - Results: [E12_TURNOVER_MEMORY_RESULTS.md](E12_TURNOVER_MEMORY_RESULTS.md)
 
 The exploratory model suggests that preserving a moderate local history trace across replacement can improve retention of an already encoded target pattern under noise and turnover. Stronger memory can become harmful when it goes stale. The graph and initial state encode the pattern, so this is a persistence result, not emergence or a biological law.
+
+
+## Full run audit — E7 through E12
+
+- Consolidated protocol, run counts, condition summaries, paired comparisons, caveats: [E7_E12_FULL_RUN_AUDIT.md](E7_E12_FULL_RUN_AUDIT.md)
+- Full combined raw trial data and summary CSV were exported as downloadable artifacts in the conversation. They are not committed in this repository.
