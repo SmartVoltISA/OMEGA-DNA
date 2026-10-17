@@ -2,7 +2,7 @@
 
 **Experiment ID:** E15-ODNA-FORM-TRANSFER-01  
 **Protocol frozen:** 2026-10-17, before E15 execution  
-**Status:** confirmatory synthetic computational test; biological relevance not assumed  
+**Status:** confirmatory synthetic computational test; first implementation run INVALID due size-dependent integer rounding in edge additions; corrected rerun status is exploratory-corrected until independently reproduced  
 **Hypothesis:** H-DNA-05
 
 ## Question
@@ -50,3 +50,8 @@ The 20% corruption condition is a stress test, not a required pass.
 ## Falsifiers and limitations
 
 Failure to improve over the local model at low/moderate noise weakens the hypothesis. Success only on familiar sizes, or collapse under node permutation, also weakens it. The test uses synthetic graph families and hand-designed features; it cannot establish biological abstraction, life, consciousness, or spontaneous discovery of the right abstraction. Results are valid only for this declared benchmark.
+
+
+## Implementation audit note (2026-10-17)
+
+The first execution was **INVALID** and is not used as a result: the runner rounded the requested number of added edges to an integer. At 2% noise this added zero edges for some smaller training graphs but one edge for larger test graphs, unintentionally making the corruption distribution depend on graph size. The runner was corrected to sample added edges with a Bernoulli probability whose expected count scales with the original edge count. This preserves the declared expected addition rate across sizes. The corrected run is reported separately; because an implementation correction followed an initial execution, independent reproduction is required before treating E15 as confirmatory.
