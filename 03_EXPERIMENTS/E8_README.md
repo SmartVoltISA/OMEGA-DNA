@@ -10,3 +10,11 @@ In this abstract model, topology constructed using a target pattern preserved th
 ## Next gate
 
 Match degree distributions and edge counts, add explicit topology turnover and resource accounting, preregister the parameter grid, and test whether the effect survives those controls.
+
+
+## E9 — Degree-preserving null and assortativity sweep
+
+- Runner: [E9_DEGREE_MATCHED_RUNNER.py](E9_DEGREE_MATCHED_RUNNER.py)
+- Full-run results and limitations: [E9_FULL_RUN_RESULTS.md](E9_FULL_RUN_RESULTS.md)
+
+The exploratory sweep found that strongly target-aligned topology can preserve the encoded binary pattern under noise, while degree-preserving rewiring returns retention to approximately chance. This is evidence about structural encoding in this toy model only. It does not demonstrate self-organization, life, or a universal principle. E9 was not preregistered; see the report for limitations and next controls.
