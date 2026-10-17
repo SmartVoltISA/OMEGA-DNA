@@ -38,17 +38,25 @@ See:
 
 - `03_EXPERIMENTS/FULL_DNA_PASS.md` — complete layer-by-layer pass.
 - `03_EXPERIMENTS/FULL_EXECUTION_AUDIT_2026-09-07.md` — execution audit and open gates.
-- `03_EXPERIMENTS/E5_MEMORY_CAUSAL_PERSISTENCE_RESULTS.md` — latest memory/persistence gate.
-- `03_EXPERIMENTS/E6_REAL_BIOLOGICAL_GATE_PROTOCOL.md` — preregistered biological benchmark.
+- `03_EXPERIMENTS/E5_MEMORY_CAUSAL_PERSISTENCE_RESULTS.md` — memory/persistence gate.
+- `03_EXPERIMENTS/E6_REAL_BIOLOGICAL_GATE_PROTOCOL.md` — biological benchmark protocol.
 - `03_EXPERIMENTS/E6_REAL_BIOLOGICAL_GATE_RUNNER.py` — reproducible runner for the real-data gate.
+- `03_EXPERIMENTS/E14_ABSTRACTION_MEMORY_PROTOCOL.md` — abstract-form memory pilot protocol.
+- `03_EXPERIMENTS/E14_ABSTRACTION_MEMORY_RUNNER.py` — reproducible E14 runner.
+- `03_EXPERIMENTS/E14_ABSTRACTION_MEMORY_RESULTS.md` — E14 results and limitations.
+- `03_EXPERIMENTS/E15_ABSTRACTION_CONFIRMATORY_PROTOCOL.md` — frozen E15 protocol and transparent record of an invalid first implementation run.
+- `03_EXPERIMENTS/E15_ABSTRACTION_CONFIRMATORY_RUNNER.py` — corrected E15 runner.
+- `03_EXPERIMENTS/E15_ABSTRACTION_CONFIRMATORY_RESULTS.md` — corrected rerun results; independent reproduction pending.
 - `03_EXPERIMENTS/RESEARCH_STABILITY_IDENTITY_MIRROR_LIFE.md` — separate research proposal on system stability, identity under component turnover, and the scientific context of mirror life.
+- `HYPOTHESES.md` — includes H-DNA-05, memory of abstract form.
 
 ## Current verdict
 
 **Architecture-level relational capacity: supported in controlled computational systems.**  
+**Hand-designed abstract-form transfer: provisionally supported in E14/E15 synthetic tests.**  \n**Learned abstract-form transfer: not demonstrated by E16; the tested message-passing model failed on global-form distinctions.**  
 **Real biological predictive advantage: still open.**  
 **New biological principle: no evidence yet.**
 
-The decisive next gate is now a real public functional-genomics benchmark comparing a capacity-matched sequence-only model against sequence + independently measured typed relations/state under chromosome-level holdouts, relation-shuffle nulls, and leakage controls.
+The decisive biological gate remains a real public functional-genomics benchmark comparing a capacity-matched sequence-only model against sequence + independently measured typed relations/state under chromosome-level holdouts, relation-shuffle nulls, and leakage controls.
 
 Public datasets identified for this gate include GSE188405 (matched ATAC-seq, RNA-seq and H3K27ac HiChIP across human cell types) and the GSE113480/GSE113481/GSE113482 family (ATAC-seq, promoter-capture Hi-C and RNA-seq in human neural cell types).
