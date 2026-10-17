@@ -36,7 +36,7 @@
 
 ## H-DNA-05 — Memory of abstract form
 
-**Status:** HYPOTHESIS; exploratory computational test E14 underway. Not an established biological principle.
+**Status:** HYPOTHESIS; E14 exploratory pilot and E15 corrected synthetic test completed; independent reproduction pending. Not an established biological principle.
 
 **Claim:** A system's memory may encode not only specific elements and their pairwise relations, but also higher-level forms and invariant relations that can be reused across different concrete graphs.
 
@@ -55,7 +55,7 @@
 
 **Falsifier:** No advantage over density-only on held-out sizes at low/moderate noise, or loss of the advantage under repeated independent seeds. A result on these synthetic graph families does not establish biological abstraction, life, consciousness, or a universal law.
 
-**Limitations declared in advance:** graph features are hand-designed; graph families are synthetic and structurally distinct; the task tests transfer of a compact representation, not spontaneous discovery of an abstraction from unrestricted experience. E14 is exploratory because implementation choices were iterated during initial analysis; a new confirmatory experiment with frozen code and fresh seeds is required.
+**Limitations declared in advance:** graph features are hand-designed; graph families are synthetic and structurally distinct; the task tests transfer of a compact representation, not spontaneous discovery of an abstraction from unrestricted experience. E14 is exploratory because implementation choices were iterated during initial analysis. E15's first run was invalid due size-dependent integer rounding in edge additions; the corrected runner uses Bernoulli additions and shows a bounded advantage under low/moderate noise, but independent reproduction is still required.
 
 ## Research discipline
 
