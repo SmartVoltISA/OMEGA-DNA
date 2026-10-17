@@ -82,14 +82,19 @@ def run_trial(seed, within_fraction, null=False):
 
     graph_rng = np.random.default_rng(seed + 700000)
     adjacency = make_graph(N, K, target, within_fraction, graph_rng)
+    original_degree_sequence = adjacency.sum(axis=1).copy()
     accepted_swaps = 0
     swap_attempts = 0
     if null:
         adjacency, accepted_swaps, swap_attempts = degree_preserving_rewire(
             adjacency, np.random.default_rng(seed + 900000), 20
         )
+    degree_sequence_preserved = bool(np.array_equal(
+        original_degree_sequence, adjacency.sum(axis=1)
+    ))
+    if null and not degree_sequence_preserved:
+        raise RuntimeError("Degree-preserving null changed a node degree")
 
-    degree_before = adjacency.sum(axis=1).copy()
     retention = []
     for step in range(STEPS):
         state[disturbances[step]] = 1 - state[disturbances[step]]
@@ -114,7 +119,8 @@ def run_trial(seed, within_fraction, null=False):
         "perturbation_rate": PERTURBATION_RATE,
         "controller_uses_target": False,
         "target_influences_graph": True,
-        "degree_sequence_sum": int(degree_before.sum()),
+        "degree_sequence_sum": int(adjacency.sum()),
+        "degree_sequence_preserved": degree_sequence_preserved,
         "accepted_swaps": accepted_swaps,
         "swap_attempts": swap_attempts,
     }
