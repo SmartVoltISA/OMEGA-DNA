@@ -1,7 +1,7 @@
 # E7–E12 Full Experiment Audit
 
 **Run date:** 2026-10-17  
-**Status:** all six model suites evaluated in a local Python analysis session using implementations cross-checked against the committed runners. The repository runners remain the canonical reproduction scripts. A GitHub Actions workflow was added, but the repository reported no workflow runs at the time of this audit; therefore this report does not claim a GitHub-hosted CI execution.  
+**Status:** all six committed runner scripts were executed successfully in GitHub Actions on Python 3.12 with NumPy. Workflow run: [#1 — OMEGA full experiment suite](https://github.com/SmartVoltISA/OMEGA-DNA/actions/runs/39013821290). All six run steps and the artifact upload completed successfully.  
 **Total trial rows:** 8,540.  
 **Scope:** abstract binary-network simulations only; no biological or mirror-organism model.
 
