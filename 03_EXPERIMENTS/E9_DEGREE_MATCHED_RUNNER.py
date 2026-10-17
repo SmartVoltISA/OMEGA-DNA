@@ -147,5 +147,5 @@ def main():
             print(f"within={fraction:.1f} {condition}: mean={np.mean(vals):.6f}; SD={np.std(vals, ddof=1):.6f}")
 
 
-if __ ( __name__ == "__main__" ):
+if __name__ == "__main__":
     main()
