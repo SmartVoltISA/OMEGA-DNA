@@ -44,13 +44,16 @@ See:
 - `03_EXPERIMENTS/E14_ABSTRACTION_MEMORY_PROTOCOL.md` — abstract-form memory pilot protocol.
 - `03_EXPERIMENTS/E14_ABSTRACTION_MEMORY_RUNNER.py` — reproducible E14 runner.
 - `03_EXPERIMENTS/E14_ABSTRACTION_MEMORY_RESULTS.md` — E14 results and limitations.
+- `03_EXPERIMENTS/E15_ABSTRACTION_CONFIRMATORY_PROTOCOL.md` — frozen E15 protocol and transparent record of an invalid first implementation run.
+- `03_EXPERIMENTS/E15_ABSTRACTION_CONFIRMATORY_RUNNER.py` — corrected E15 runner.
+- `03_EXPERIMENTS/E15_ABSTRACTION_CONFIRMATORY_RESULTS.md` — corrected rerun results; independent reproduction pending.
 - `03_EXPERIMENTS/RESEARCH_STABILITY_IDENTITY_MIRROR_LIFE.md` — separate research proposal on system stability, identity under component turnover, and the scientific context of mirror life.
 - `HYPOTHESES.md` — includes H-DNA-05, memory of abstract form.
 
 ## Current verdict
 
 **Architecture-level relational capacity: supported in controlled computational systems.**  
-**Abstract-form transfer: provisionally supported in a synthetic graph-classification pilot; confirmatory test pending.**  
+**Abstract-form transfer: provisionally supported in exploratory E14 and a corrected E15 synthetic test; independent reproduction pending.**  
 **Real biological predictive advantage: still open.**  
 **New biological principle: no evidence yet.**
 
