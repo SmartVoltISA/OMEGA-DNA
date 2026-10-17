@@ -41,6 +41,7 @@ See:
 - `03_EXPERIMENTS/E5_MEMORY_CAUSAL_PERSISTENCE_RESULTS.md` — latest memory/persistence gate.
 - `03_EXPERIMENTS/E6_REAL_BIOLOGICAL_GATE_PROTOCOL.md` — preregistered biological benchmark.
 - `03_EXPERIMENTS/E6_REAL_BIOLOGICAL_GATE_RUNNER.py` — reproducible runner for the real-data gate.
+- `03_EXPERIMENTS/RESEARCH_STABILITY_IDENTITY_MIRROR_LIFE.md` — separate research proposal on system stability, identity under component turnover, and the scientific context of mirror life.
 
 ## Current verdict
 
