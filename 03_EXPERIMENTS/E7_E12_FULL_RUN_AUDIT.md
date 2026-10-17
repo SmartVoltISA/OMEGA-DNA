@@ -109,3 +109,27 @@ Canonical runners:
 - [E12 runner](E12_TURNOVER_MEMORY_RUNNER.py)
 
 A combined raw trial-level CSV and aggregate summary CSV are provided as downloadable artifacts in the conversation response. Raw CSV generation by the repository runners is reproducible; raw outputs have not been committed to this repository.
+
+
+## E13 — Emergence without target labels (follow-up)
+
+E13 adds 480 exploratory trials (40 replicates × 3 noise levels × 4 conditions), bringing the combined E7–E13 trial count to **9,020** across the recorded suites.
+
+| Noise | Condition | Mean minority fraction | Last-50-step entropy | Consensus rate | Median consensus step |
+|---:|---|---:|---:|---:|---:|
+| 0% | Static | 0.31% | 0.000 | 100% | 3 |
+| 0% | Adaptive assortative | 3.46% | 0.073 | 92.5% | 3 |
+| 0% | Shuffled-state control | 0.29% | 0.000 | 100% | 3 |
+| 0% | Random rewiring | 0.31% | 0.000 | 100% | 3 |
+| 1% | Static | 0.29% | 0.000 | 100% | 3 |
+| 1% | Adaptive assortative | 1.35% | 0.024 | 97.5% | 4 |
+| 1% | Shuffled-state control | 0.31% | 0.000 | 100% | 3 |
+| 1% | Random rewiring | 0.29% | 0.000 | 100% | 3 |
+| 3% | Static | 0.29% | 0.000 | 100% | 3 |
+| 3% | Adaptive assortative | 0.41% | 0.000 | 100% | 4 |
+| 3% | Shuffled-state control | 0.29% | 0.000 | 100% | 3 |
+| 3% | Random rewiring | 0.33% | 0.000 | 100% | 3 |
+
+**E13 conclusion:** the tested local-majority dynamics generally collapse to consensus in 3–4 steps. Adaptive rewiring briefly retains more minority-state nodes at low noise, but no stable differentiated organization emerges. This is a limited negative result for this rule set, not a general disproof of self-organization.
+
+The E13 runner and report are linked from [E13_EMERGENCE_RESULTS.md](E13_EMERGENCE_RESULTS.md). The full GitHub Actions workflow includes E13, but no hosted workflow run had been observed at the time this report was updated. E13 values were obtained in a local Python analysis using the same algorithm; independent clean-environment reproduction remains pending.
