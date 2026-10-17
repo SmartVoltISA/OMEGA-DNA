@@ -26,3 +26,11 @@ The exploratory sweep found that strongly target-aligned topology can preserve t
 - Results and limitations: [E10_LOCAL_ADAPTATION_RESULTS.md](E10_LOCAL_ADAPTATION_RESULTS.md)
 
 In this exploratory test, state-based degree-preserving rewiring did not robustly preserve the initial balanced pattern. The local-majority dynamics usually collapsed toward global consensus; stronger rewiring helped slightly at low noise but not reliably at 3% noise. This is a limited negative result for this rule, not a general disproof of self-organization.
+
+
+## E11 — Local memory / hysteresis under noise
+
+- Runner: [E11_MEMORY_HYSTERESIS_RUNNER.py](E11_MEMORY_HYSTERESIS_RUNNER.py)
+- Results: [E11_MEMORY_HYSTERESIS_RESULTS.md](E11_MEMORY_HYSTERESIS_RESULTS.md)
+
+The exploratory sweep found that stronger local memory can delay collapse toward consensus, but the benefit shrinks as noise rises. At 3% noise, even the strongest tested memory returned to about 50% target retention in the final 50 steps. This is limited evidence for history-dependent persistence in this toy model, not spontaneous memory or a universal law.
