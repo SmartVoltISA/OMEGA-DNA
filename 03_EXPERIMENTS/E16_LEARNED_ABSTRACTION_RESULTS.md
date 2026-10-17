@@ -40,7 +40,16 @@ At 2–10% corruption, performance was uneven: the model retained some ability t
 
 ## Negative control
 
-Degree-preserving edge rewiring disrupts the original topology while retaining local degree sequences. In this test, the model's scores on the rewired graphs remained close to those on the original graphs for many conditions. This is a warning sign: the learned representation relied heavily on local degree/neighborhood patterns rather than reliably capturing the global graph form. It is not evidence of successful abstract-form memory.
+Degree-preserving edge rewiring disrupts the original topology while retaining local degree sequences. The mean accuracy across held-out sizes for original vs rewired test graphs was:
+
+| Corruption | Original | Degree-preserving rewired |
+|---:|---:|---:|
+| 0% | 75.0% | 75.0% |
+| 2% | 44.0% | 43.6% |
+| 5% | 34.3% | 35.6% |
+| 10% | 32.8% | 32.8% |
+
+The near-identical performance is a warning sign: the learned representation did not reliably capture global graph form. It retained local patterns that often survive degree-preserving rewiring, and it was already close to chance under corruption. This is not evidence of successful abstract-form memory.
 
 ## Decision
 
